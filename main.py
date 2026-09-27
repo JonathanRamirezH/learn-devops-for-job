@@ -32,3 +32,8 @@ async def selectPartner(model_name:ModelName):
     if model_name.value == "Jose":
         return{"Partner name": model_name, "ranking":2}
     return {"Default Partner":model_name}
+
+#Add URL Path for upload data to save un data base throught API Request
+@app.get("/user/save/location/{url_path:path}")
+async def saveData(url_path:str):
+    return {"location for data storing":"/"+url_path}
